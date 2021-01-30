@@ -30,7 +30,7 @@ texture = ExtResource( 10 )
 texture = ExtResource( 9 )
 
 [node name="RechargingStations" parent="." index="4" instance=ExtResource( 2 )]
-position = Vector2( -100.304, -196.083 )
+position = Vector2( -164.376, -289.522 )
 rotation = -0.523598
 script = ExtResource( 3 )
 
@@ -38,7 +38,7 @@ script = ExtResource( 3 )
 texture = ExtResource( 8 )
 
 [node name="Character" parent="." index="5" instance=ExtResource( 4 )]
-position = Vector2( 164.931, 254.668 )
+position = Vector2( 329.116, 448.22 )
 script = ExtResource( 5 )
 
 [node name="Sprite" parent="Character" index="1"]

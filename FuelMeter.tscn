@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://FuelMeter.gd" type="Script" id=1]
+[ext_resource path="res://Assets/fuel/fuel_fill-bar.png" type="Texture" id=2]
+[ext_resource path="res://Assets/fuel/fuel_fill-color.png" type="Texture" id=3]
+[ext_resource path="res://Assets/fuel/fuel_fill-barBack.png" type="Texture" id=4]
+[ext_resource path="res://Assets/fuel/fuel_aura.png" type="Texture" id=5]
+[ext_resource path="res://shader.tres" type="Shader" id=6]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 6 )
+
+[node name="FuelMeter" type="Control"]
+anchor_right = 0.33
+anchor_bottom = 0.292
+margin_right = -0.200012
+margin_bottom = -0.12001
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fuel_fill-barBack" type="TextureRect" parent="."]
+anchor_right = 0.986
+anchor_bottom = 0.99
+margin_right = -208.046
+margin_bottom = -103.95
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fill" type="TextureRect" parent="."]
+light_mask = 2
+material = SubResource( 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -104.0
+margin_top = -104.0
+margin_right = 104.0
+rect_min_size = Vector2( 0, 104 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+position = Vector2( 104.247, 52.3597 )
+texture = ExtResource( 2 )
+mode = 3
+range_item_cull_mask = 2
+
+[node name="fuel_aura" type="TextureRect" parent="."]
+anchor_right = 0.986
+anchor_bottom = 1.0
+margin_right = -0.0460205
+margin_bottom = -1.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

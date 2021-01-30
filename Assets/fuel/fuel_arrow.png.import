@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Polygon 1.png-87298b1acdb5d65f10e2c0a2f2b24360.stex"
+path="res://.import/fuel_arrow.png-447bfee51928db87bd064732bc71ad79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Polygon 1.png"
-dest_files=[ "res://.import/Polygon 1.png-87298b1acdb5d65f10e2c0a2f2b24360.stex" ]
+source_file="res://Assets/fuel/fuel_arrow.png"
+dest_files=[ "res://.import/fuel_arrow.png-447bfee51928db87bd064732bc71ad79.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

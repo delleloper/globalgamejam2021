@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ellipse 1.png-a39155fca07f01a2a30d08c7ef814de9.stex"
+path="res://.import/fuel_text_empty.png-45d7c574af3bea19a5bfb33fdf96b53d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ellipse 1.png"
-dest_files=[ "res://.import/Ellipse 1.png-a39155fca07f01a2a30d08c7ef814de9.stex" ]
+source_file="res://Assets/fuel/fuel_text_empty.png"
+dest_files=[ "res://.import/fuel_text_empty.png-45d7c574af3bea19a5bfb33fdf96b53d.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

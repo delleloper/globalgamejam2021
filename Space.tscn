@@ -5,12 +5,12 @@
 [ext_resource path="res://planets/Lunos.tscn" type="PackedScene" id=3]
 [ext_resource path="res://planets/Alderaaan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://LostObject.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Ui.gd" type="Script" id=6]
 [ext_resource path="res://planets/Pentagonial.tscn" type="PackedScene" id=7]
 [ext_resource path="res://planets/Couliflower.tscn" type="PackedScene" id=8]
 [ext_resource path="res://planets/Mcvoiya.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/bg/bg_galaxy2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/bg/bg_galaxy1.png" type="Texture" id=11]
+[ext_resource path="res://FuelMeter.tscn" type="PackedScene" id=12]
 
 [node name="Space" type="Node2D"]
 
@@ -26,10 +26,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Ship" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2302.44, 2974.08 )
-collision_mask = 0
-
 [node name="bg_galaxy1" type="Sprite" parent="."]
 position = Vector2( 4595.1, 842.447 )
 texture = ExtResource( 11 )
@@ -41,47 +37,47 @@ texture = ExtResource( 10 )
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="Alderaaan" parent="Planets" instance=ExtResource( 4 )]
-position = Vector2( 2410.68, 898.07 )
-scale = Vector2( 2, 2 )
+position = Vector2( 3386.61, -2120.26 )
 
 [node name="Lunos" parent="Planets" instance=ExtResource( 3 )]
-position = Vector2( 5883.68, 1849.94 )
-scale = Vector2( 2, 2 )
+position = Vector2( 11424.2, 1975.65 )
 
 [node name="Pentagonial" parent="Planets" instance=ExtResource( 7 )]
-position = Vector2( 2349.31, 5053.75 )
-scale = Vector2( 2, 2 )
+position = Vector2( 1738.7, 8627.67 )
 
 [node name="Couliflower" parent="Planets" instance=ExtResource( 8 )]
-position = Vector2( -1608.84, 2689.03 )
-scale = Vector2( 2, 2 )
+position = Vector2( -3366.71, 1267.29 )
 
 [node name="Mcvoiya" parent="Planets" instance=ExtResource( 9 )]
-position = Vector2( 6095.58, 4587.59 )
-scale = Vector2( 2, 2 )
+position = Vector2( 9220.51, 7092.92 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-playerPath = NodePath("../../Ship")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
-margin_right = 75.0
-margin_bottom = 71.0
+[node name="FuelMeter" parent="CanvasLayer/Control" instance=ExtResource( 12 )]
+margin_left = 248.205
+margin_top = 307.357
+margin_right = 248.005
+margin_bottom = 307.237
+rect_scale = Vector2( 0.5, 0.5 )
+playerPath = NodePath("../../../Ship")
 
 [node name="LostObject" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2196.51, 1800.85 )
-id = 1
+position = Vector2( 1383.76, 3048.54 )
 
 [node name="LostObject3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1573.09, 2386.94 )
-id = 3
+position = Vector2( 820.662, 2485.36 )
 
 [node name="LostObject2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 987.134, 1795.47 )
+
+[node name="Ship" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2627.65, 1288.18 )
+scale = Vector2( 0.2, 0.2 )
+collision_mask = 0

@@ -5,7 +5,7 @@ export var moveSpeed = 2
 var direction = Vector2.ZERO
 var vector
 var velocity = Vector2.ZERO
-var maxFuel = 9999
+var maxFuel = 100
 export var fuel : float = maxFuel
 export var fuelConsumtion= 0.02
 var movementEnabled = true
@@ -43,4 +43,3 @@ func movement(delta):
 func pickObject(id):
 	print("picked",id)
 	inventory.append(id)
-	print(inventory)
