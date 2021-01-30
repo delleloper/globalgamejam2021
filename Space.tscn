@@ -1,18 +1,23 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/bg.png" type="Texture" id=2]
-[ext_resource path="res://Planet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/bg/bg.png" type="Texture" id=2]
+[ext_resource path="res://planets/Lunos.tscn" type="PackedScene" id=3]
 [ext_resource path="res://planets/Alderaaan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://LostObject.tscn" type="PackedScene" id=5]
-[ext_resource path="res://addons/dialogic/Nodes/Dialog.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Ui.gd" type="Script" id=6]
+[ext_resource path="res://planets/Pentagonial.tscn" type="PackedScene" id=7]
+[ext_resource path="res://planets/Couliflower.tscn" type="PackedScene" id=8]
+[ext_resource path="res://planets/Mcvoiya.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/bg/bg_galaxy2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/bg/bg_galaxy1.png" type="Texture" id=11]
 
 [node name="Space" type="Node2D"]
 
 [node name="bg" type="TextureRect" parent="."]
-margin_left = -101529.0
+margin_left = -101525.0
 margin_top = -56246.0
-margin_right = 96746.7
+margin_right = 96750.7
 margin_bottom = 78491.0
 texture = ExtResource( 2 )
 expand = true
@@ -23,38 +28,60 @@ __meta__ = {
 
 [node name="Ship" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2302.44, 2974.08 )
+collision_mask = 0
 
-[node name="Planet" parent="." instance=ExtResource( 3 )]
-position = Vector2( 211.486, 812.198 )
+[node name="bg_galaxy1" type="Sprite" parent="."]
+position = Vector2( 4595.1, 842.447 )
+texture = ExtResource( 11 )
+
+[node name="bg_galaxy2" type="Sprite" parent="."]
+position = Vector2( -258.486, 1080.03 )
+texture = ExtResource( 10 )
 
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="Alderaaan" parent="Planets" instance=ExtResource( 4 )]
-position = Vector2( 2410.68, 901.633 )
+position = Vector2( 2410.68, 898.07 )
+scale = Vector2( 2, 2 )
+
+[node name="Lunos" parent="Planets" instance=ExtResource( 3 )]
+position = Vector2( 5883.68, 1849.94 )
+scale = Vector2( 2, 2 )
+
+[node name="Pentagonial" parent="Planets" instance=ExtResource( 7 )]
+position = Vector2( 2349.31, 5053.75 )
+scale = Vector2( 2, 2 )
+
+[node name="Couliflower" parent="Planets" instance=ExtResource( 8 )]
+position = Vector2( -1608.84, 2689.03 )
+scale = Vector2( 2, 2 )
+
+[node name="Mcvoiya" parent="Planets" instance=ExtResource( 9 )]
+position = Vector2( 6095.58, 4587.59 )
+scale = Vector2( 2, 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+playerPath = NodePath("../../Ship")
 
-[node name="DialogNode" parent="CanvasLayer/Control" instance=ExtResource( 6 )]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-margin_left = -20.0
-margin_top = -40.0
-margin_right = 20.0
-timeline = "timeline-1611982524"
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+margin_right = 75.0
+margin_bottom = 71.0
 
 [node name="LostObject" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2202.5, 1797.85 )
+position = Vector2( 2196.51, 1800.85 )
+id = 1
 
 [node name="LostObject3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1565.09, 2382.94 )
+position = Vector2( 1573.09, 2386.94 )
+id = 3
 
 [node name="LostObject2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 987.134, 1795.47 )

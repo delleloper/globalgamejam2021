@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Dialogic",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/dialogic_class.gd"
+}, {
 "base": "Reference",
 "class": "DialogicUtil",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://PlanetFeature.gd"
 } ]
 _global_script_class_icons={
+"Dialogic": "",
 "DialogicUtil": "",
 "PlanetFeature": ""
 }
@@ -34,8 +40,14 @@ config/icon="res://icon.png"
 
 window/size/width=640
 window/size/height=360
+window/size/always_on_top=true
 window/size/test_width=1280
 window/size/test_height=720
+window/stretch/mode="2d"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "dialogic" )
 
 [input]
 

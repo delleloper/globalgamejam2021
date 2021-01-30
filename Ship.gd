@@ -7,7 +7,7 @@ var vector
 var velocity = Vector2.ZERO
 var maxFuel = 9999
 export var fuel : float = maxFuel
-export var fuelConsumtion= 0.2
+export var fuelConsumtion= 0.02
 var movementEnabled = true
 var inventory = []
 
@@ -15,14 +15,13 @@ func _physics_process(delta: float) -> void:
 	getInputs()
 	movement(delta)
 func stopMoving():
-	movementEnabled = false
+	pass
 
 func enterPlanet():
-	direction = Vector2.ZERO
-	velocity = Vector2.ZERO
+	pass
 
 func exitPlanet():
-	movementEnabled = true
+	pass
 
 func getInputs():
 	direction.x += Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
@@ -34,7 +33,7 @@ func movement(delta):
 		direction = direction.linear_interpolate(Vector2.ZERO,delta)
 	fuel = clamp(fuel,0,100)
 	look_at(direction)
-	if movementEnabled && fuel:
+	if fuel:
 		velocity = direction*moveSpeed*delta
 	if !fuel:
 		print("no more fuel")
@@ -44,3 +43,4 @@ func movement(delta):
 func pickObject(id):
 	print("picked",id)
 	inventory.append(id)
+	print(inventory)
