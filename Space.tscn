@@ -256,71 +256,86 @@ position = Vector2( 6376.63, 9661.63 )
 
 [node name="LostObject3" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 820.662, 2485.36 )
+id = 2
 
 [node name="LostObject2" parent="LostObjects" instance=ExtResource( 5 )]
-position = Vector2( 3360.13, 70.1372 )
+position = Vector2( 7176.13, -1001.86 )
+id = 3
 
 [node name="LostObject16" parent="LostObjects" instance=ExtResource( 5 )]
-position = Vector2( 3288.86, -286.222 )
-id = 2
+position = Vector2( 2722.54, 2158.97 )
+id = 4
 
 [node name="LostObject17" parent="LostObjects" instance=ExtResource( 5 )]
-position = Vector2( 3698.67, -95.1229 )
-id = 2
+position = Vector2( 1690.67, -1383.12 )
+id = 5
 
 [node name="LostObject18" parent="LostObjects" instance=ExtResource( 5 )]
-position = Vector2( 3267.48, -610.509 )
-id = 1
+position = Vector2( 4747.48, 2581.49 )
+id = 6
 
 [node name="LostObject19" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 3606.02, -610.509 )
+id = 7
 
 [node name="LostObject6" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( -334.702, 2002.99 )
+id = 8
 
 [node name="LostObject7" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 2153.44, 5676.46 )
+id = 9
 
 [node name="LostObject8" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 3830, 2985.43 )
+id = 1
 
 [node name="LostObject15" parent="LostObjects" instance=ExtResource( 5 )]
-position = Vector2( 1592.06, 547.931 )
+position = Vector2( 1592.06, 539.931 )
+id = 9
 
 [node name="LostObject9" parent="LostObjects" instance=ExtResource( 5 )]
-position = Vector2( 5597.65, 5932.75 )
-
-[node name="bg_cube1" type="Sprite" parent="LostObjects/LostObject9"]
-modulate = Color( 1, 1, 1, 0.258824 )
-position = Vector2( -3361.62, -11570.7 )
-rotation = 2.53945
-texture = ExtResource( 22 )
+position = Vector2( 5591.66, 5932.75 )
+id = 2
 
 [node name="LostObject10" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 3114.52, 8399.54 )
+id = 3
 
 [node name="LostObject11" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 7834.52, 8089.86 )
+id = 4
 
 [node name="LostObject14" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 12032.9, 7425.37 )
+id = 5
 
 [node name="LostObject12" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 10568.3, 5163.89 )
+id = 6
 
 [node name="LostObject13" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 7817.17, 1859.04 )
+id = 7
 
 [node name="LostObject4" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 6798.68, 2013.66 )
+id = 8
 
 [node name="LostObject5" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 7172.44, 379.82 )
+id = 9
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
 autoplay = true
 bus = "Music"
+
+[node name="bg_cube18" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.258824 )
+position = Vector2( 2230.04, -5637.95 )
+rotation = 2.53945
+texture = ExtResource( 22 )
 
 [node name="bg_cube5" type="Sprite" parent="."]
 position = Vector2( 10540.9, 6701.66 )
@@ -362,8 +377,9 @@ position = Vector2( 7012.47, 4353.44 )
 texture = ExtResource( 21 )
 
 [node name="planet_cube_aura2" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0.780392, 0, 1, 1 )
-position = Vector2( 4563.79, -624.664 )
+position = Vector2( 4571.79, -624.664 )
 rotation = 2.16246
 texture = ExtResource( 25 )
 
