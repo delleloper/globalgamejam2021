@@ -16,7 +16,7 @@ func onShipExit(ship):
 	print("ship exit")
 
 func onShipStay(ship):
-	print("ship stay")
+	pass
 
 func _process(delta: float) -> void:
 	if shipArrived:

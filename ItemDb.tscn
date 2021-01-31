@@ -1,10 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ItemsDb.gd" type="Script" id=1]
 [ext_resource path="res://items/carda.tres" type="Resource" id=2]
 [ext_resource path="res://items/oxigen.tres" type="Resource" id=3]
 [ext_resource path="res://items/cardb.tres" type="Resource" id=4]
+[ext_resource path="res://items/water.tres" type="Resource" id=5]
+[ext_resource path="res://items/ligthsaber.tres" type="Resource" id=6]
+[ext_resource path="res://items/mushroom.tres" type="Resource" id=7]
+[ext_resource path="res://items/tricoder.tres" type="Resource" id=8]
+[ext_resource path="res://items/gas.tres" type="Resource" id=9]
+[ext_resource path="res://items/letter.tres" type="Resource" id=10]
+[ext_resource path="res://items/ligthsaberkylo.tres" type="Resource" id=11]
+[ext_resource path="res://items/food.tres" type="Resource" id=12]
 
 [node name="ItemDb" type="Node"]
 script = ExtResource( 1 )
-objects = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ]
+objects = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 12 ) ]

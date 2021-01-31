@@ -23,6 +23,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 3 )
 
 [node name="aura2" parent="." index="2"]
+position = Vector2( 2.82837, 0 )
 texture = ExtResource( 4 )
 
 [node name="Sprite" parent="." index="3"]

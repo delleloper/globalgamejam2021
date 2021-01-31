@@ -41,10 +41,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.2, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.74325, 1.74325 ), Vector2( 1e-05, 1e-05 ) ]
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1, 1 ), Vector2( 1e-05, 1e-05 ) ]
 }
 tracks/3/type = "method"
 tracks/3/path = NodePath(".")
@@ -83,7 +83,7 @@ shape = SubResource( 1 )
 
 [node name="icon" type="Sprite" parent="."]
 position = Vector2( 0.333923, 0.570984 )
-scale = Vector2( 1.04595, 1.04595 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="icon2" type="Sprite" parent="icon"]

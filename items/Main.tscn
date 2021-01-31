@@ -1,0 +1,148 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Poppins-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/start_aura.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ship/ship_1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/start_button.png" type="Texture" id=4]
+[ext_resource path="res://items/Main.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+use_filter = true
+extra_spacing_char = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+use_filter = true
+extra_spacing_char = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "¿WHERE DO YOU GO WHEN
+ YOU HAVE NOWERE TO GO?
+" ]
+}
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start_aura" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ship_1" type="TextureRect" parent="."]
+margin_left = 302.082
+margin_top = 145.429
+margin_right = 348.082
+margin_bottom = 200.429
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -170.0
+margin_top = 21.0
+margin_right = 185.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 1 )
+text = "¿WHERE DO YOU GO WHEN
+ YOU HAVE NOWERE TO GO?
+"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -86.0455
+margin_top = 93.3123
+margin_right = 318.954
+margin_bottom = 194.312
+custom_fonts/font = SubResource( 3 )
+text = "Mica karaman - ilustration
+francisco delledonne - code
+Albert foster - audio and ilustration
+"
+align = 2
+valign = 2
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -171.65
+margin_top = -156.216
+margin_right = 183.35
+margin_bottom = -81.2157
+custom_fonts/font = SubResource( 1 )
+text = "Whereabouts"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start_button" type="TextureRect" parent="."]
+margin_left = 300.259
+margin_top = 263.779
+margin_right = 348.259
+margin_bottom = 299.779
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "show"
+anims/show = SubResource( 2 )

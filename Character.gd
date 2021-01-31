@@ -5,6 +5,12 @@ var missionStarted = false
 var missionFinished = false
 var item
 onready var audioPlayer = $AudioStreamPlayer
+onready var missionCompleteAudio = $missionComplete
+
+onready var object = $planet_round_bubble/object
+
+func _ready() -> void:
+	getMission()
 
 func getMission():
 	if missionFinished:
@@ -14,7 +20,7 @@ func getMission():
 		item = ItemDb.getItem(requiredItem)
 
 func onShipArrive(ship):
-	getMission()
+	object.texture = item.image
 	audioPlayer.play()
 	print(animator.current_animation)
 	animator.play("showBubble")
@@ -22,13 +28,15 @@ func onShipArrive(ship):
 		print("i neeed item ", item.name)
 		missionStarted = true
 	else:
+		print(ship.hasItem(requiredItem))
 		if ship.hasItem(requiredItem):
 			ship.removeItem(requiredItem)
-			audioPlayer.stream = preload("res://Assets/Sounds/entregar objeto  cumplir mision.wav")
-			audioPlayer.play()
+			object.texture = preload("res://Assets/Props/emoji-smile.png")
+			missionCompleteAudio.play()
 			print("Thank you")
 			missionStarted = false
 			missionFinished = true
+			getMission()
 		else:
 			print("please get me ", item.name)
 

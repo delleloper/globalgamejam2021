@@ -65,4 +65,7 @@ shape = SubResource( 6 )
 
 [node name="IdleTimer" type="Timer" parent="."]
 wait_time = 0.001
+
+[node name="drop" type="Position2D" parent="."]
+position = Vector2( -109.125, -0.000686646 )
 [connection signal="timeout" from="IdleTimer" to="." method="_on_Timer_timeout"]

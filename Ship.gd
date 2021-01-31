@@ -4,7 +4,7 @@ onready var particles = $Particles2D
 onready var cam = $Camera2D
 onready var timer = $IdleTimer
 
-
+onready var lostObjectScn = preload("res://LostObject.tscn")
 export var moveSpeed = 2
 export var fuelConsumtion= 0.02
 export var maxFuel = 100
@@ -82,22 +82,29 @@ func movement(delta):
 	velocity = velocity *0.99
 
 func pickObject(object):
-	print(inventory.size())
-	if inventory.size() < 3:
-		object.picked()
-		var pickedItem = ItemDb.getItem(object.id)
-		var itemPos = inventory.size() - 1
-		print("picked",object.id)
-		inventory.append(itemPos)
-		uiSlots.slots[itemPos].texture = pickedItem.image
-		uiSlots.showItem(itemPos)
+	if inventory.size() == 3:
+		return
+#		var lostObj = lostObjectScn.instance()
+#		lostObj.id = removeItem(0)
+#		lostObj.global_position = $drop.global_position
+#		get_parent().add_child(lostObj)
+	object.picked()
+	var pickedItem = ItemDb.getItem(object.id)
+	var itemPos = inventory.size()
+	print("picked",object.id)
+	uiSlots.slots[itemPos].texture = pickedItem.image
+	uiSlots.showItem(itemPos)
+	inventory.append(object.id)
+
+
 
 func removeItem(id):
 	var itemInCargo = inventory.find(id)
 	if itemInCargo != -1:
 		inventory.remove(itemInCargo)
 #		uiSlots.slots[itemInCargo].texture = null
-		uiSlots.hideItem(id)
+		uiSlots.hideItem(itemInCargo)
+	return id
 
 func hasItem(id):
 	return inventory.has(id)

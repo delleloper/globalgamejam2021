@@ -143,10 +143,6 @@ scale = Vector2( 1e-05, 1e-05 )
 position = Vector2( 688.214, 33.2171 )
 scale = Vector2( 1e-05, 1e-05 )
 
-[node name="Ship" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3739.95, -370.918 )
-collision_mask = 0
-
 [node name="LostObjects" type="Node2D" parent="."]
 
 [node name="LostObject" parent="LostObjects" instance=ExtResource( 5 )]
@@ -156,7 +152,20 @@ position = Vector2( 6376.63, 9661.63 )
 position = Vector2( 820.662, 2485.36 )
 
 [node name="LostObject2" parent="LostObjects" instance=ExtResource( 5 )]
-position = Vector2( 3360.13, 70.1372 )
+position = Vector2( 3930.34, 281.16 )
+id = 3
+
+[node name="LostObject20" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 3158.09, 155.444 )
+id = 5
+
+[node name="LostObject22" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 2843.8, -19.6599 )
+id = 5
+
+[node name="LostObject21" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 3539.72, 339.528 )
+id = 4
 
 [node name="LostObject16" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 3288.86, -286.222 )
@@ -213,5 +222,9 @@ position = Vector2( 7172.44, 379.82 )
 stream = ExtResource( 19 )
 autoplay = true
 bus = "Music"
+
+[node name="Ship" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3739.95, -370.918 )
+collision_mask = 0
 [connection signal="curve_tween" from="CanvasLayer/Control/ui_slots/CurveTween" to="CanvasLayer/Control/ui_slots" method="_on_CurveTween_curve_tween"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
