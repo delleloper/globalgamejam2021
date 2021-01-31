@@ -8,7 +8,9 @@ func _ready() -> void:
 	data = ItemDb.getItem(id)
 
 func _on_LostObject_body_entered(body: Node) -> void:
-	body.pickObject(id)
+	body.pickObject(self)
+
+func picked():
 	$AnimationPlayer.play("pick")
 
 func _physics_process(delta: float) -> void:

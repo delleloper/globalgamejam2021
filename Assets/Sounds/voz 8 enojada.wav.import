@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/voz 8 enojada.wav-93f55ecaf74255a947574ebf7d9476cb.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/voz 8 enojada.wav"
+dest_files=[ "res://.import/voz 8 enojada.wav-93f55ecaf74255a947574ebf7d9476cb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

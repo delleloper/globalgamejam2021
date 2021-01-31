@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/entregar objeto  cumplir mision.wav-001a42fc2b2e5b7d8797c432f912b330.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/entregar objeto  cumplir mision.wav"
+dest_files=[ "res://.import/entregar objeto  cumplir mision.wav-001a42fc2b2e5b7d8797c432f912b330.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

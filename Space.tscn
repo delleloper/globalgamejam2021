@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/bg/bg.png" type="Texture" id=2]
@@ -13,6 +13,14 @@
 [ext_resource path="res://Assets/bg/bg_galaxy1.png" type="Texture" id=11]
 [ext_resource path="res://FuelMeter.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Space.gd" type="Script" id=13]
+[ext_resource path="res://Assets/bg/bg_cube2.png" type="Texture" id=14]
+[ext_resource path="res://Assets/bg/bg_cube1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Ship/ship_slot.png" type="Texture" id=16]
+[ext_resource path="res://ui_slots.gd" type="Script" id=17]
+[ext_resource path="res://addons/CurveTween/CurveTween.tscn" type="PackedScene" id=18]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
 [node name="Space" type="Node2D"]
 script = ExtResource( 13 )
@@ -26,36 +34,59 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 2
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="bg_galaxy1" type="Sprite" parent="."]
-position = Vector2( 4595.1, 842.447 )
+position = Vector2( 6471.65, -4492.02 )
+texture = ExtResource( 11 )
+
+[node name="bg_galaxy3" type="Sprite" parent="."]
+position = Vector2( -4955.2, 4310.05 )
 texture = ExtResource( 11 )
 
 [node name="bg_galaxy2" type="Sprite" parent="."]
-position = Vector2( -258.486, 1080.03 )
+position = Vector2( 3402.1, 9898.5 )
 texture = ExtResource( 10 )
+
+[node name="bg_cube1" type="Sprite" parent="."]
+position = Vector2( 4198.55, 3405.97 )
+texture = ExtResource( 15 )
+
+[node name="bg_cube4" type="Sprite" parent="."]
+position = Vector2( -2585.79, -1053 )
+rotation = 1.309
+texture = ExtResource( 15 )
+
+[node name="bg_cube2" type="Sprite" parent="."]
+position = Vector2( 12173.6, 6377.58 )
+texture = ExtResource( 14 )
+
+[node name="bg_cube3" type="Sprite" parent="."]
+position = Vector2( 9320.87, 432.297 )
+rotation = 1.57079
+texture = ExtResource( 14 )
 
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="Alderaaan" parent="Planets" instance=ExtResource( 4 )]
-position = Vector2( 3386.61, -2122.5 )
+position = Vector2( 4529.54, -903.381 )
 
 [node name="Lunos" parent="Planets" instance=ExtResource( 3 )]
-position = Vector2( 8592.06, 2408.16 )
+position = Vector2( -729.154, 3322.5 )
 atraction = 2500
 
 [node name="Pentagonial" parent="Planets" instance=ExtResource( 7 )]
-position = Vector2( 1738.7, 8627.67 )
+position = Vector2( 8342.29, 7383.15 )
 atraction = 2500
 
 [node name="Couliflower" parent="Planets" instance=ExtResource( 8 )]
-position = Vector2( -2256.12, 5261.13 )
+position = Vector2( 842.482, 7826.37 )
 atraction = 2500
 
 [node name="Mcvoiya" parent="Planets" instance=ExtResource( 9 )]
-position = Vector2( 6792, 7341.83 )
+position = Vector2( 11744.7, 3582.86 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -63,6 +94,7 @@ position = Vector2( 6792, 7341.83 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -87,19 +119,89 @@ rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 246.942, -1.12242 )
 texture = ExtResource( 6 )
 stretch_mode = 4
+script = ExtResource( 17 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+shipPath = NodePath("../../../Ship")
 
-[node name="LostObject" parent="." instance=ExtResource( 5 )]
-position = Vector2( 3252.65, -1197.79 )
+[node name="CurveTween" parent="CanvasLayer/Control/ui_slots" instance=ExtResource( 18 )]
+curve = SubResource( 1 )
 
-[node name="LostObject3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 820.662, 2485.36 )
+[node name="invImg" type="Sprite" parent="CanvasLayer/Control/ui_slots"]
+position = Vector2( 588.479, 33.6528 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 16 )
 
-[node name="LostObject2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2465.55, -735.018 )
+[node name="invImg2" type="Sprite" parent="CanvasLayer/Control/ui_slots"]
+position = Vector2( 638.69, 33.2376 )
+scale = Vector2( 1e-05, 1e-05 )
+
+[node name="invImg3" type="Sprite" parent="CanvasLayer/Control/ui_slots"]
+position = Vector2( 688.214, 33.2171 )
+scale = Vector2( 1e-05, 1e-05 )
 
 [node name="Ship" parent="." instance=ExtResource( 1 )]
-position = Vector2( 6083.11, 6848.22 )
+position = Vector2( 3739.95, -370.918 )
 collision_mask = 0
+
+[node name="LostObjects" type="Node2D" parent="."]
+
+[node name="LostObject" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 6376.63, 9661.63 )
+
+[node name="LostObject3" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 820.662, 2485.36 )
+
+[node name="LostObject2" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 3360.13, 70.1372 )
+
+[node name="LostObject16" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 3288.86, -286.222 )
+
+[node name="LostObject17" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 3698.67, -93.7881 )
+
+[node name="LostObject18" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 3267.48, -610.509 )
+
+[node name="LostObject19" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 3606.02, -610.509 )
+
+[node name="LostObject6" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( -334.702, 2002.99 )
+
+[node name="LostObject7" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 2153.44, 5676.46 )
+
+[node name="LostObject8" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 3830, 2985.43 )
+
+[node name="LostObject15" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 1592.06, 547.931 )
+
+[node name="LostObject9" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 5591.99, 5932.75 )
+
+[node name="LostObject10" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 3114.52, 8399.54 )
+
+[node name="LostObject11" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 7834.52, 8089.86 )
+
+[node name="LostObject14" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 12032.9, 7425.37 )
+
+[node name="LostObject12" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 10568.3, 5163.89 )
+
+[node name="LostObject13" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 10696.4, 1832.13 )
+
+[node name="LostObject4" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 6798.68, 2013.66 )
+
+[node name="LostObject5" parent="LostObjects" instance=ExtResource( 5 )]
+position = Vector2( 7172.44, 379.82 )
+[connection signal="curve_tween" from="CanvasLayer/Control/ui_slots/CurveTween" to="CanvasLayer/Control/ui_slots" method="_on_CurveTween_curve_tween"]

@@ -1,7 +1,7 @@
 extends PlanetFeature
 
 var fuelAvaliable = 200
-var rechargeAmount = 0.5
+var rechargeAmount = 0.2
 
 func onShipArrive(ship):
 

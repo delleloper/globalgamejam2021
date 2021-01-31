@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FuelStation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sounds/voz 1.wav" type="AudioStream" id=3]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Planets/planet_cube.png" type="Texture" id=7]
 [ext_resource path="res://Assets/bg/planet_cube_aura2.png" type="Texture" id=9]
@@ -34,3 +35,8 @@ rotation = -0.655453
 [node name="Character" parent="." index="7" instance=ExtResource( 4 )]
 position = Vector2( 133, 198 )
 rotation = 2.35619
+
+[node name="AudioStreamPlayer" parent="Character" index="4"]
+stream = ExtResource( 3 )
+
+[editable path="Character"]

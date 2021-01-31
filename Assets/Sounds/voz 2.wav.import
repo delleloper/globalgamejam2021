@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/voz 2.wav-c941cf489b715b0ee823605a6fe157db.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/voz 2.wav"
+dest_files=[ "res://.import/voz 2.wav-c941cf489b715b0ee823605a6fe157db.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

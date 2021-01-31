@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Planet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/bg/planet_moon_aura2.png" type="Texture" id=2]
@@ -7,8 +7,12 @@
 [ext_resource path="res://Character.tscn" type="PackedScene" id=5]
 [ext_resource path="res://FuelStation.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Characters/planet_moon_ch.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sounds/voz 2.wav" type="AudioStream" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 340.314
+
+[sub_resource type="CircleShape2D" id=2]
 radius = 161.64
 
 [node name="Lunos" instance=ExtResource( 1 )]
@@ -16,6 +20,7 @@ radius = 161.64
 [node name="CollisionShape2D" parent="." index="0"]
 visible = true
 position = Vector2( -6.37982, 99.2432 )
+shape = SubResource( 1 )
 
 [node name="aura1" parent="." index="1"]
 texture = ExtResource( 4 )
@@ -33,12 +38,15 @@ position = Vector2( -48.9601, -235.427 )
 [node name="Sprite" parent="Character" index="2"]
 texture = ExtResource( 7 )
 
+[node name="AudioStreamPlayer" parent="Character" index="4"]
+stream = ExtResource( 8 )
+
 [node name="FuelStation" parent="." index="5" instance=ExtResource( 6 )]
 position = Vector2( -153.09, 437.126 )
 rotation = -2.61799
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="6"]
 position = Vector2( 357.085, -77.576 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [editable path="Character"]

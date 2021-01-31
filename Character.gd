@@ -4,22 +4,26 @@ export var requiredItem : int = 0
 var missionStarted = false
 var missionFinished = false
 var item
+onready var audioPlayer = $AudioStreamPlayer
 
 func getMission():
 	if missionFinished:
 		item = ItemDb.getRandomItem()
+		requiredItem = item.id
 	else:
 		item = ItemDb.getItem(requiredItem)
 
 func onShipArrive(ship):
 	getMission()
+	audioPlayer.play()
 	print(animator.current_animation)
 	animator.play("showBubble")
 	if !missionStarted:
 		print("i neeed item ", item.name)
 		missionStarted = true
 	else:
-		if ship.inventory.has(requiredItem):
+		if ship.hasItem(requiredItem):
+			ship.removeItem(requiredItem)
 			print("Thank you")
 			missionStarted = false
 			missionFinished = true
