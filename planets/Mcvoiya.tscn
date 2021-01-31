@@ -28,6 +28,7 @@ texture = ExtResource( 4 )
 [node name="Character" parent="." index="4" instance=ExtResource( 5 )]
 position = Vector2( 252.638, -69.97 )
 rotation = 1.309
+requiredItem = 7
 
 [node name="planet_round_bubble" parent="Character" index="0"]
 position = Vector2( -11.7, -128 )
