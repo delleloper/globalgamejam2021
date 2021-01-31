@@ -60,13 +60,11 @@ texture = ExtResource( 27 )
 modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 3385.55, -3536.68 )
 rotation = -6.28319
-scale = Vector2( 1, 1 )
 texture = ExtResource( 30 )
 
 [node name="planet_round2" type="Sprite" parent="planet_pentagon"]
 position = Vector2( 5197.38, -2240.31 )
 rotation = 1.7174
-scale = Vector2( 1, 1 )
 texture = ExtResource( 29 )
 
 [node name="planet_round" type="Sprite" parent="planet_pentagon"]
@@ -77,7 +75,6 @@ texture = ExtResource( 29 )
 [node name="planet_round3" type="Sprite" parent="planet_pentagon"]
 position = Vector2( 6538.79, -10311.2 )
 rotation = 1.7174
-scale = Vector2( 1, 1 )
 texture = ExtResource( 29 )
 
 [node name="planet_round4" type="Sprite" parent="planet_pentagon"]
@@ -130,7 +127,7 @@ position = Vector2( 6471.65, -4492.02 )
 texture = ExtResource( 11 )
 
 [node name="bg_galaxy3" type="Sprite" parent="."]
-position = Vector2( 182.173, 4918.92 )
+position = Vector2( 295.31, 4489 )
 texture = ExtResource( 11 )
 
 [node name="bg_galaxy2" type="Sprite" parent="."]
@@ -186,7 +183,7 @@ atraction = 500
 position = Vector2( -4382.4, 1667.12 )
 
 [node name="Pentagonial" parent="Planets" instance=ExtResource( 7 )]
-position = Vector2( 8266.18, 7592.45 )
+position = Vector2( 8266.18, 7591.51 )
 
 [node name="Couliflower" parent="Planets" instance=ExtResource( 8 )]
 position = Vector2( -432.348, 6190.02 )
