@@ -8,8 +8,8 @@ func _ready() -> void:
 	data = ItemDb.getItem(id)
 
 func _on_LostObject_body_entered(body: Node) -> void:
-	queue_free()
 	body.pickObject(id)
+	$AnimationPlayer.play("pick")
 
 func _physics_process(delta: float) -> void:
 	rotation_degrees += delta*4

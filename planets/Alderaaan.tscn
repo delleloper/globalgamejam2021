@@ -1,51 +1,36 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Planet.tscn" type="PackedScene" id=1]
-[ext_resource path="res://PlanetFeature.tscn" type="PackedScene" id=2]
-[ext_resource path="res://FuelStation.gd" type="Script" id=3]
+[ext_resource path="res://FuelStation.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Character.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Characters/planet_cube_ch.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Planets/planet_cube.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Props/gas-spot.png" type="Texture" id=8]
 [ext_resource path="res://Assets/bg/planet_cube_aura2.png" type="Texture" id=9]
 [ext_resource path="res://Assets/bg/planet_cube_aura1.png" type="Texture" id=10]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 179.684
-
 [node name="Alderaaan" instance=ExtResource( 1 )]
+atraction = 1000
 
-[node name="Sprite" parent="." index="0"]
-modulate = Color( 0.196078, 0.807843, 0.145098, 1 )
-texture = ExtResource( 7 )
+[node name="CollisionShape2D" parent="." index="0"]
+rotation = -0.012744
+disabled = true
 
-[node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource( 1 )
-
-[node name="aura1" parent="." index="2"]
+[node name="aura1" parent="." index="1"]
 texture = ExtResource( 10 )
 
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PoolVector2Array( 277, -78.8, 277, -66.9, 218.3, 169.1, 216.3, 169.1, -47.3, 298.5, -52.6, 298.5, -277, 77.8, -277, 67.7, -218.3, -171.1, -215.3, -171.1, 45.4, -298.5, 52.6, -298.5 )
+
 [node name="aura2" parent="." index="3"]
+position = Vector2( 28, 18 )
 texture = ExtResource( 9 )
 
-[node name="RechargingStations" parent="." index="4" instance=ExtResource( 2 )]
-position = Vector2( -164.376, -289.522 )
-rotation = -0.523598
-script = ExtResource( 3 )
+[node name="Sprite" parent="." index="4"]
+texture = ExtResource( 7 )
 
-[node name="Sprite" parent="RechargingStations" index="1"]
-texture = ExtResource( 8 )
+[node name="FuelStation" parent="." index="5" instance=ExtResource( 2 )]
+position = Vector2( -37.3779, -302.449 )
+rotation = -0.655453
 
-[node name="Character" parent="." index="5" instance=ExtResource( 4 )]
-position = Vector2( 329.116, 448.22 )
-script = ExtResource( 5 )
-
-[node name="Sprite" parent="Character" index="1"]
-position = Vector2( -63.9082, -70.6353 )
-rotation = 2.61799
-texture = ExtResource( 6 )
-
-[editable path="RechargingStations"]
-
-[editable path="Character"]
+[node name="Character" parent="." index="7" instance=ExtResource( 4 )]
+position = Vector2( 133, 198 )
+rotation = 2.35619

@@ -4,7 +4,7 @@ var maxFuel = 100
 var fuel = 100
 var fullTexture = 208
 onready var texture = $fill
-
+onready var arrow = $fuel_arrow
 var textureWidth = 208
 export var playerPath : NodePath
 var playerShip
@@ -16,5 +16,6 @@ func _ready():
 
 func _process(delta: float) -> void:
 	fuel = playerShip.fuel
-	textureWidth = (fuel * fullTexture) /maxFuel
-	texture.rect_size.x = textureWidth
+	texture.rect_rotation = lerp(-180, 0, fuel/maxFuel)
+	arrow.rect_rotation = lerp(-105, 105, fuel/maxFuel)
+

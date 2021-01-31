@@ -1,18 +1,21 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/bg/bg.png" type="Texture" id=2]
 [ext_resource path="res://planets/Lunos.tscn" type="PackedScene" id=3]
 [ext_resource path="res://planets/Alderaaan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://LostObject.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Props/ui_slots.png" type="Texture" id=6]
 [ext_resource path="res://planets/Pentagonial.tscn" type="PackedScene" id=7]
 [ext_resource path="res://planets/Couliflower.tscn" type="PackedScene" id=8]
 [ext_resource path="res://planets/Mcvoiya.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/bg/bg_galaxy2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/bg/bg_galaxy1.png" type="Texture" id=11]
 [ext_resource path="res://FuelMeter.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Space.gd" type="Script" id=13]
 
 [node name="Space" type="Node2D"]
+script = ExtResource( 13 )
 
 [node name="bg" type="TextureRect" parent="."]
 margin_left = -101525.0
@@ -37,19 +40,22 @@ texture = ExtResource( 10 )
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="Alderaaan" parent="Planets" instance=ExtResource( 4 )]
-position = Vector2( 3386.61, -2120.26 )
+position = Vector2( 3386.61, -2122.5 )
 
 [node name="Lunos" parent="Planets" instance=ExtResource( 3 )]
-position = Vector2( 11424.2, 1975.65 )
+position = Vector2( 8592.06, 2408.16 )
+atraction = 2500
 
 [node name="Pentagonial" parent="Planets" instance=ExtResource( 7 )]
 position = Vector2( 1738.7, 8627.67 )
+atraction = 2500
 
 [node name="Couliflower" parent="Planets" instance=ExtResource( 8 )]
-position = Vector2( -3366.71, 1267.29 )
+position = Vector2( -2256.12, 5261.13 )
+atraction = 2500
 
 [node name="Mcvoiya" parent="Planets" instance=ExtResource( 9 )]
-position = Vector2( 9220.51, 7092.92 )
+position = Vector2( 6792, 7341.83 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -61,23 +67,39 @@ __meta__ = {
 }
 
 [node name="FuelMeter" parent="CanvasLayer/Control" instance=ExtResource( 12 )]
-margin_left = 248.205
-margin_top = 307.357
-margin_right = 248.005
-margin_bottom = 307.237
-rect_scale = Vector2( 0.5, 0.5 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -180.0
+margin_right = 320.0
+margin_bottom = 180.0
 playerPath = NodePath("../../../Ship")
 
+[node name="ui_slots" type="TextureRect" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -121.0
+margin_right = 515.0
+margin_bottom = -294.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 246.942, -1.12242 )
+texture = ExtResource( 6 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="LostObject" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1383.76, 3048.54 )
+position = Vector2( 3252.65, -1197.79 )
 
 [node name="LostObject3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 820.662, 2485.36 )
 
 [node name="LostObject2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 987.134, 1795.47 )
+position = Vector2( 2465.55, -735.018 )
 
 [node name="Ship" parent="." instance=ExtResource( 1 )]
-position = Vector2( -2627.65, 1288.18 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 6083.11, 6848.22 )
 collision_mask = 0
