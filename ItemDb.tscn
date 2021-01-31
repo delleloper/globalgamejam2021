@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ItemsDb.gd" type="Script" id=1]
-[ext_resource path="res://items/test.tres" type="Resource" id=2]
+[ext_resource path="res://items/carda.tres" type="Resource" id=2]
+[ext_resource path="res://items/oxigen.tres" type="Resource" id=3]
+[ext_resource path="res://items/cardb.tres" type="Resource" id=4]
 
 [node name="ItemDb" type="Node"]
 script = ExtResource( 1 )
-objects = [ ExtResource( 2 ) ]
+objects = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ]

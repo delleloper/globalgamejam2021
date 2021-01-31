@@ -24,6 +24,8 @@ func onShipArrive(ship):
 	else:
 		if ship.hasItem(requiredItem):
 			ship.removeItem(requiredItem)
+			audioPlayer.stream = preload("res://Assets/Sounds/entregar objeto  cumplir mision.wav")
+			audioPlayer.play()
 			print("Thank you")
 			missionStarted = false
 			missionFinished = true

@@ -7,7 +7,7 @@ func _ready() -> void:
 	size = objects.size()
 
 func getItem(id):
-	return objects[0]
+	return objects[id]
 
 func getRandomItem():
 	var random = randi() % size + 1

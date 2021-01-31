@@ -6,6 +6,7 @@ var data
 func _ready() -> void:
 	rotation_degrees = randi() % 360
 	data = ItemDb.getItem(id)
+	$icon.texture = data.image
 
 func _on_LostObject_body_entered(body: Node) -> void:
 	body.pickObject(self)

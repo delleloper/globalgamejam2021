@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/bg/bg.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Assets/Ship/ship_slot.png" type="Texture" id=16]
 [ext_resource path="res://ui_slots.gd" type="Script" id=17]
 [ext_resource path="res://addons/CurveTween/CurveTween.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/Sounds/intro.wav" type="AudioStream" id=19]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
@@ -159,12 +160,15 @@ position = Vector2( 3360.13, 70.1372 )
 
 [node name="LostObject16" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 3288.86, -286.222 )
+id = 2
 
 [node name="LostObject17" parent="LostObjects" instance=ExtResource( 5 )]
-position = Vector2( 3698.67, -93.7881 )
+position = Vector2( 3698.67, -95.1229 )
+id = 2
 
 [node name="LostObject18" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 3267.48, -610.509 )
+id = 1
 
 [node name="LostObject19" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 3606.02, -610.509 )
@@ -182,7 +186,7 @@ position = Vector2( 3830, 2985.43 )
 position = Vector2( 1592.06, 547.931 )
 
 [node name="LostObject9" parent="LostObjects" instance=ExtResource( 5 )]
-position = Vector2( 5591.99, 5932.75 )
+position = Vector2( 5597.65, 5932.75 )
 
 [node name="LostObject10" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 3114.52, 8399.54 )
@@ -204,4 +208,10 @@ position = Vector2( 6798.68, 2013.66 )
 
 [node name="LostObject5" parent="LostObjects" instance=ExtResource( 5 )]
 position = Vector2( 7172.44, 379.82 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+autoplay = true
+bus = "Music"
 [connection signal="curve_tween" from="CanvasLayer/Control/ui_slots/CurveTween" to="CanvasLayer/Control/ui_slots" method="_on_CurveTween_curve_tween"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

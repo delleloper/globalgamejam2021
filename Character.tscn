@@ -3,38 +3,11 @@
 [ext_resource path="res://PlanetFeature.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Characters/planet_cube_ch.png" type="Texture" id=2]
 [ext_resource path="res://Character.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Characters/planet_round_bubble.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/planet_bubble.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "bubbleIddle"
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("planet_round_bubble:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 2, 1.10957 ),
-"update": 0,
-"values": [ Vector2( 2, 2 ), Vector2( 2.25, 2.25 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("planet_round_bubble:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -11.7, -128 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "showBubble"
 tracks/0/type = "value"
 tracks/0/path = NodePath("planet_round_bubble:position")
 tracks/0/interp = 2
@@ -42,10 +15,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -35.0445, -65.9708 ), Vector2( -11.7, -128 ) ]
+"values": [ Vector2( -11.7, -128 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("planet_round_bubble:scale")
@@ -54,10 +27,37 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 2, 1.10957 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 2.25, 2.25 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "showBubble"
+tracks/0/type = "value"
+tracks/0/path = NodePath("planet_round_bubble:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( -2, -0.5 ),
 "update": 0,
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 2, 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("planet_round_bubble:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -35.0445, -65.9708 ), Vector2( -11.7, -128 ) ]
 }
 
 [node name="Character" instance=ExtResource( 1 )]
@@ -82,4 +82,5 @@ anims/showBubble = SubResource( 2 )
 next/showBubble = "nothing"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+bus = "Effects"
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
