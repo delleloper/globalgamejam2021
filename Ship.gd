@@ -77,7 +77,7 @@ func movement(delta):
 		velocity += direction*moveSpeed*delta
 		velocity = velocity.clamped(60)
 	if !fuel:
-		print("no more fuel")
+		get_tree().change_scene("res://items/Gameover.tscn")
 	move_and_collide(velocity)
 	velocity = velocity *0.99
 
