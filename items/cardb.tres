@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource( 1 )
-id = 2
+id = 1
 name = "cardb"
 description = ""
 image = ExtResource( 2 )

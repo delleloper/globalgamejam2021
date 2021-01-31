@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource( 1 )
-id = 0
+id = 7
 name = "Oxigen"
 description = ""
 image = ExtResource( 2 )

@@ -1,9 +1,11 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://ItemClass.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Props/anvorguesa.png" type="Texture" id=2]
 
 [resource]
 script = ExtResource( 1 )
-id = 1
-name = "Food"
+id = 10
+name = "Leter"
 description = ""
+image = ExtResource( 2 )
