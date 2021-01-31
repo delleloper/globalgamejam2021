@@ -19,21 +19,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fuel_fill-barBack" type="TextureRect" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -51.7649
-margin_top = -51.8243
-margin_right = 156.235
-margin_bottom = 52.1757
-rect_scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="fuel_bg" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -45,6 +30,21 @@ margin_right = 289.148
 margin_bottom = 59.9481
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fuel_fill-barBack" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -51.7649
+margin_top = -51.8243
+margin_right = 156.235
+margin_bottom = 52.1757
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

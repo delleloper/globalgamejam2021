@@ -32,6 +32,7 @@ texture = ExtResource( 2 )
 [node name="Character" parent="." index="5" instance=ExtResource( 5 )]
 position = Vector2( -419.979, 77.2323 )
 rotation = -1.0472
+requiredItem = 5
 
 [node name="Sprite" parent="Character" index="2"]
 texture = ExtResource( 6 )
