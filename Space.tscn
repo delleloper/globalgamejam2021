@@ -418,7 +418,8 @@ texture = ExtResource( 21 )
 
 [node name="bg_galaxy14" type="Sprite" parent="."]
 modulate = Color( 1, 0, 0, 0.490196 )
-position = Vector2( -9597.61, 10210.4 )
+position = Vector2( -9718.42, 8941.83 )
+rotation = 1.35088
 texture = ExtResource( 20 )
 
 [node name="bg_cube14" type="Sprite" parent="."]
