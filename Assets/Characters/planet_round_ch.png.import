@@ -14,7 +14,7 @@ dest_files=[ "res://.import/planet_round_ch.png-56f5ea9b32b05c982b4f0f6de6a541a5
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

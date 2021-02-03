@@ -14,7 +14,7 @@ dest_files=[ "res://.import/planet_moon_aura1.png-23bdd41ce09a9a984806157b2a2cbc
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

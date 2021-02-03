@@ -14,7 +14,7 @@ dest_files=[ "res://.import/bg_cube1.png-207051a10d7856e4245d76fdc20ff86f.stex" 
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

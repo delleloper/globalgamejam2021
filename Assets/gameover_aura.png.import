@@ -14,7 +14,7 @@ dest_files=[ "res://.import/gameover_aura.png-bed799982b73ad0c8ab7a7da841b0566.s
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

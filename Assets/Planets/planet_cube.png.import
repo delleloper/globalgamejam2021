@@ -14,7 +14,7 @@ dest_files=[ "res://.import/planet_cube.png-195072927d3174fdd78eb09130017553.ste
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

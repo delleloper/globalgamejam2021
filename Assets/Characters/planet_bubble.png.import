@@ -14,7 +14,7 @@ dest_files=[ "res://.import/planet_bubble.png-ea6438d17274c1264e0f72a71fc3cdbc.s
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

@@ -14,7 +14,7 @@ dest_files=[ "res://.import/planet_split.png-fba2a5ebe48befa5899e0f141dae7fdc.st
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

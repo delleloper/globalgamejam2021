@@ -14,7 +14,7 @@ dest_files=[ "res://.import/planet_cube_aura2.png-28809fc392d20d02298f6072788062
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
