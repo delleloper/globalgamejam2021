@@ -10,7 +10,6 @@ radius = 12.1344
 [node name="Ship" type="KinematicBody2D"]
 rotation = 1.57079
 script = ExtResource( 2 )
-moveSpeed = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

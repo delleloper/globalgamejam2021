@@ -10,5 +10,5 @@ func getItem(id):
 	return objects[id]
 
 func getRandomItem():
-	var random = randi() % size + 1
+	var random = randi() % size
 	return getItem(random)

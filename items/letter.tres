@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource( 1 )
 id = 3
-name = "Leter"
-description = ""
+name = "Letter"
+description = "Dont open until 20XX"
 image = ExtResource( 2 )

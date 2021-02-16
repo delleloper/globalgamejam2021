@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource( 1 )
 id = 10
-name = "Leter"
-description = ""
+name = "Hamburguer"
+description = "This is not real meat!"
 image = ExtResource( 2 )

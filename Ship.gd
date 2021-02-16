@@ -5,26 +5,20 @@ onready var cam = $Camera2D
 onready var timer = $IdleTimer
 
 onready var lostObjectScn = preload("res://LostObject.tscn")
-export var moveSpeed = 2
-export var fuelConsumtion= 0.02
-export var maxFuel = 100
+export onready var shipStats = preload("res://Ships/BasicShip.tres")
 
+var currentShip = 0
 var direction = Vector2.ZERO
 var velocity = Vector2.ZERO
-var fuel : float = maxFuel
 var movementEnabled = true
 var inventory = []
 var zoomoout = false
 var invertInput = true
 var uiSlots = []
 
+signal itemPicked
+
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		invertInput = !invertInput
-	if !invertInput:
-		getInputs()
-	else:
-		getInputsInverted()
 	movement(delta)
 
 func stopMoving():
@@ -36,28 +30,29 @@ func enterPlanet():
 func exitPlanet():
 	pass
 
+func _input(event: InputEvent) -> void:
+	getInputs()
+
+
 func getInputs():
-	direction.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
-	direction.y = Input.get_action_strength("move_up") - Input.get_action_strength("move_down")
+	if Input.is_action_just_pressed("ui_accept"):
+		invertInput = !invertInput
+	if !invertInput:
+		direction.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
+		direction.y = Input.get_action_strength("move_up") - Input.get_action_strength("move_down")
+	else:
+		direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+
 	if(direction.length() < 0.1):
 		direction = Vector2.ZERO
 	else:
 		direction = direction.normalized()
-
-func getInputsInverted():
-	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	if(direction.length() < 0.1):
-		direction = Vector2.ZERO
-	else:
-		direction = direction.normalized()
-
-
 
 func movement(delta):
 	if direction.length() > 0.5:
 		zoomoout = false
-		fuel-= fuelConsumtion
+		shipStats.reduceFuel()
 		particles.emitting = true
 		cam.offset_h = lerp(cam.offset_h,direction.x, delta*2)
 		cam.offset_v = lerp(cam.offset_v,direction.y, delta*2)
@@ -67,17 +62,17 @@ func movement(delta):
 		particles.emitting = false
 	if velocity.length() > 0.001:
 		look_at((global_position + velocity))
-	fuel = clamp(fuel,0,100)
+
 
 	if zoomoout:
 		cam.zoom = lerp(cam.zoom, Vector2(2,2), delta/2)
 	else:
-		cam.zoom = lerp(cam.zoom, Vector2(3,3), delta/2)
-	if fuel:
-		velocity += direction*moveSpeed*delta
+		cam.zoom = lerp(cam.zoom, Vector2(4,4), delta/2)
+	if shipStats.fuelAvaliable():
+		velocity += direction * shipStats.speed * delta
 		velocity = velocity.clamped(60)
-	if !fuel:
-		get_tree().change_scene("res://items/Gameover.tscn")
+	else:
+		ranOutOfFuel()
 	move_and_collide(velocity)
 	velocity = velocity *0.99
 
@@ -89,12 +84,13 @@ func pickObject(object):
 #		lostObj.global_position = $drop.global_position
 #		get_parent().add_child(lostObj)
 	object.picked()
-	var pickedItem = ItemDb.getItem(object.id)
+	var pickedItem = object.data
 	var itemPos = inventory.size()
 	print("picked",object.id)
 	uiSlots.slots[itemPos].texture = pickedItem.image
 	uiSlots.showItem(itemPos)
 	inventory.append(object.id)
+	emit_signal("itemPicked", object.data)
 
 
 
@@ -111,3 +107,6 @@ func hasItem(id):
 
 func _on_Timer_timeout() -> void:
 	zoomoout = true
+
+func ranOutOfFuel():
+	get_tree().change_scene("res://items/Gameover.tscn")

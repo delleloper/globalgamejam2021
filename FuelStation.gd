@@ -4,7 +4,6 @@ var fuelAvaliable = 200
 var rechargeAmount = 0.2
 
 func onShipArrive(ship):
-
 	animator.play("charge")
 	print("entered recharge station")
 	shipArrived = true
@@ -16,8 +15,8 @@ func onShipExit(ship):
 	print("fuel remaining: ",fuelAvaliable)
 
 func onShipStay(ship):
-	if fuelAvaliable && ship.fuel < ship.maxFuel:
-		ship.fuel += rechargeAmount
+	if fuelAvaliable && !ship.shipStats.tankFull():
+		ship.shipStats.fuel += rechargeAmount
 		fuelAvaliable -= rechargeAmount
 	else:
 		animator.play("idle")

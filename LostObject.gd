@@ -1,11 +1,13 @@
 extends Area2D
 
 export var id : int
-var data
+export var data :Resource
+
 
 func _ready() -> void:
+	if !data:
+		data = ItemDb.getRandomItem()
 	rotation_degrees = randi() % 360
-	data = ItemDb.getItem(id)
 	$icon.texture = data.image
 
 func _on_LostObject_body_entered(body: Node) -> void:

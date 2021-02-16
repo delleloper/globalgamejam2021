@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/ui_slots.png" type="Texture" id=1]
+[ext_resource path="res://ui_slots.gd" type="Script" id=2]
+[ext_resource path="res://Ui/Ui.gd" type="Script" id=3]
+[ext_resource path="res://Assets/ship_slot.png" type="Texture" id=9]
+[ext_resource path="res://Ui/FuelMeter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/CurveTween/CurveTween.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ItemList.gd" type="Script" id=14]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Ui" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ui_slots" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -121.0
+margin_right = 515.0
+margin_bottom = -294.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 246.942, -1.12242 )
+texture = ExtResource( 1 )
+stretch_mode = 4
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+shipPath = NodePath("../../../Ship")
+
+[node name="CurveTween" parent="ui_slots" instance=ExtResource( 11 )]
+curve = SubResource( 1 )
+
+[node name="invImg" type="Sprite" parent="ui_slots"]
+position = Vector2( 588.479, 33.6528 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 9 )
+
+[node name="invImg2" type="Sprite" parent="ui_slots"]
+position = Vector2( 638.69, 33.2376 )
+scale = Vector2( 1e-05, 1e-05 )
+
+[node name="invImg3" type="Sprite" parent="ui_slots"]
+position = Vector2( 688.214, 33.2171 )
+scale = Vector2( 1e-05, 1e-05 )
+
+[node name="ItemList" type="GridContainer" parent="."]
+margin_right = 150.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 150, 60 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FuelMeter" parent="." instance=ExtResource( 10 )]
+[connection signal="curve_tween" from="ui_slots/CurveTween" to="ui_slots" method="_on_CurveTween_curve_tween"]

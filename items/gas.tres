@@ -1,11 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
 [ext_resource path="res://ItemClass.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Props/gasolina.png" type="Texture" id=2]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/gasolina.png-2ce88abbb73b873654a16646bfc1094a.stex"
 
 [resource]
 script = ExtResource( 1 )
 id = 2
 name = "Gas"
-description = ""
-image = ExtResource( 2 )
+description = "A shame you can put it on your ship"
+image = SubResource( 1 )

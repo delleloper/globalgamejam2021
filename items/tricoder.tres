@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource( 1 )
 id = 8
-name = "Food"
-description = ""
+name = "Tricoder"
+description = "What is this for?"
 image = ExtResource( 2 )

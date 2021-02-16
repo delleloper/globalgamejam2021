@@ -1,23 +1,19 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/bg/bg.png" type="Texture" id=2]
 [ext_resource path="res://planets/Lunos.tscn" type="PackedScene" id=3]
 [ext_resource path="res://planets/Alderaaan.tscn" type="PackedScene" id=4]
 [ext_resource path="res://LostObject.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Props/ui_slots.png" type="Texture" id=6]
+[ext_resource path="res://Ui/Ui.tscn" type="PackedScene" id=6]
 [ext_resource path="res://planets/Pentagonial.tscn" type="PackedScene" id=7]
 [ext_resource path="res://planets/Couliflower.tscn" type="PackedScene" id=8]
 [ext_resource path="res://planets/Mcvoiya.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/bg/bg_galaxy2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/bg/bg_galaxy1.png" type="Texture" id=11]
-[ext_resource path="res://FuelMeter.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Space.gd" type="Script" id=13]
 [ext_resource path="res://Assets/bg/bg_cube2.png" type="Texture" id=14]
 [ext_resource path="res://Assets/bg/bg_cube1.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Ship/ship_slot.png" type="Texture" id=16]
-[ext_resource path="res://ui_slots.gd" type="Script" id=17]
-[ext_resource path="res://addons/CurveTween/CurveTween.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Assets/Sounds/intro.wav" type="AudioStream" id=19]
 [ext_resource path="res://Assets/bgGray/bg_galaxy1.png" type="Texture" id=20]
 [ext_resource path="res://Assets/bgGray/bg_cube2.png" type="Texture" id=21]
@@ -30,9 +26,6 @@
 [ext_resource path="res://Assets/bgGray/bg_galaxy2.png" type="Texture" id=28]
 [ext_resource path="res://Assets/bgGray/planet_round.png" type="Texture" id=29]
 [ext_resource path="res://Assets/bgGray/planet_split.png" type="Texture" id=30]
-
-[sub_resource type="Curve" id=1]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
 [node name="Space" type="Node2D"]
 script = ExtResource( 13 )
@@ -50,128 +43,314 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="planet_pentagon" type="Sprite" parent="."]
+[node name="BackgroundElements" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="planet_pentagon" type="Sprite" parent="BackgroundElements"]
 modulate = Color( 0.337255, 0, 1, 0.45098 )
 position = Vector2( 8282.43, 9507.51 )
 rotation = -1.7174
 texture = ExtResource( 27 )
 
-[node name="planet_split" type="Sprite" parent="planet_pentagon"]
+[node name="planet_split" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 modulate = Color( 1, 1, 1, 0.498039 )
 position = Vector2( 3385.55, -3536.68 )
-rotation = -6.28319
+rotation = -4.46638e-06
 texture = ExtResource( 30 )
 
-[node name="planet_round2" type="Sprite" parent="planet_pentagon"]
+[node name="planet_round2" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 position = Vector2( 5197.38, -2240.31 )
 rotation = 1.7174
 texture = ExtResource( 29 )
 
-[node name="planet_round" type="Sprite" parent="planet_pentagon"]
+[node name="planet_round" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 position = Vector2( 640.789, -763.896 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 29 )
 
-[node name="planet_round3" type="Sprite" parent="planet_pentagon"]
+[node name="planet_round3" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 position = Vector2( 6538.79, -10311.2 )
 rotation = 1.7174
 texture = ExtResource( 29 )
 
-[node name="planet_round4" type="Sprite" parent="planet_pentagon"]
+[node name="planet_round4" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 position = Vector2( 13673.5, -4803.16 )
 texture = ExtResource( 29 )
 
-[node name="planet_round5" type="Sprite" parent="planet_pentagon"]
+[node name="planet_round5" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 position = Vector2( 8236.3, 802.525 )
 texture = ExtResource( 29 )
 
-[node name="bg_cube11" type="Sprite" parent="."]
+[node name="bg_cube11" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 modulate = Color( 1, 1, 1, 0.192157 )
-position = Vector2( -179.128, 398.604 )
+position = Vector2( 10247.3, -7040.17 )
+rotation = 1.7174
 texture = ExtResource( 22 )
 
-[node name="bg_cube12" type="Sprite" parent="."]
+[node name="bg_cube12" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 modulate = Color( 1, 1, 1, 0.203922 )
-position = Vector2( 1868.24, 8408.49 )
-rotation = 1.35088
+position = Vector2( 2024.21, -6184.84 )
+rotation = 3.06828
 texture = ExtResource( 22 )
 
-[node name="bg_galaxy11" type="Sprite" parent="."]
+[node name="bg_galaxy11" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 modulate = Color( 1, 1, 1, 0.113725 )
-position = Vector2( -1088.74, 8136.04 )
+position = Vector2( 2725.69, -9070.3 )
+rotation = 1.7174
 texture = ExtResource( 20 )
 
-[node name="bg_galaxy12" type="Sprite" parent="."]
+[node name="bg_galaxy12" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 modulate = Color( 1, 1, 1, 0.113725 )
-position = Vector2( -5406.9, 3756.35 )
+position = Vector2( 7689.19, -12702.4 )
+rotation = 1.7174
 texture = ExtResource( 20 )
 
-[node name="bg_galaxy2" type="Sprite" parent="bg_galaxy12"]
+[node name="bg_galaxy2" type="Sprite" parent="BackgroundElements/planet_pentagon/bg_galaxy12"]
 position = Vector2( 18996.5, -3410.35 )
 texture = ExtResource( 28 )
 
-[node name="bg_galaxy1" type="Sprite" parent="bg_galaxy12/bg_galaxy2"]
+[node name="bg_galaxy1" type="Sprite" parent="BackgroundElements/planet_pentagon/bg_galaxy12/bg_galaxy2"]
 position = Vector2( -5919.98, -4228.56 )
 texture = ExtResource( 20 )
 
-[node name="bg_cube2" type="Sprite" parent="bg_galaxy12/bg_galaxy2"]
+[node name="bg_cube2" type="Sprite" parent="BackgroundElements/planet_pentagon/bg_galaxy12/bg_galaxy2"]
 position = Vector2( -17367.3, -3986.93 )
 texture = ExtResource( 21 )
 
-[node name="bg_cube1" type="Sprite" parent="bg_galaxy12/bg_galaxy2"]
+[node name="bg_cube1" type="Sprite" parent="BackgroundElements/planet_pentagon/bg_galaxy12/bg_galaxy2"]
 position = Vector2( -3171.42, 9755.88 )
 texture = ExtResource( 22 )
 
-[node name="bg_galaxy1" type="Sprite" parent="."]
-position = Vector2( 6471.65, -4492.02 )
+[node name="bg_galaxy1" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 14113.9, 253.683 )
+rotation = 1.7174
 texture = ExtResource( 11 )
 
-[node name="bg_galaxy3" type="Sprite" parent="."]
-position = Vector2( 295.31, 4489 )
+[node name="bg_galaxy3" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 6131.43, -7168.34 )
+rotation = 1.7174
 texture = ExtResource( 11 )
 
-[node name="bg_galaxy2" type="Sprite" parent="."]
-position = Vector2( 3402.1, 9898.5 )
+[node name="bg_galaxy2" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 326.118, -4885.09 )
+rotation = 1.7174
 texture = ExtResource( 10 )
 
-[node name="bg_cube1" type="Sprite" parent="."]
-position = Vector2( 3494.54, 3367.92 )
+[node name="bg_cube1" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 6773.14, -3839.66 )
+rotation = 1.7174
 texture = ExtResource( 15 )
 
-[node name="bg_cube4" type="Sprite" parent="."]
-position = Vector2( -2585.79, -1053 )
-rotation = 1.309
+[node name="bg_cube4" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 12034.8, -9208.97 )
+rotation = 3.0264
 texture = ExtResource( 15 )
 
-[node name="bg_cube2" type="Sprite" parent="."]
-position = Vector2( -4208.92, 3732.78 )
+[node name="bg_cube2" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 7537.51, -11513.8 )
+rotation = 1.7174
 texture = ExtResource( 14 )
 
-[node name="bg_cube3" type="Sprite" parent="."]
-position = Vector2( 9320.87, 432.297 )
-rotation = 1.57079
+[node name="bg_cube3" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 8826.17, 2353 )
+rotation = -2.995
 texture = ExtResource( 14 )
 
-[node name="bg_galaxy4" type="Sprite" parent="."]
+[node name="bg_galaxy4" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 modulate = Color( 0.054902, 0.141176, 0.607843, 1 )
-position = Vector2( 6084.33, -486.904 )
+position = Vector2( 10208.3, -714.545 )
+rotation = 1.7174
 texture = ExtResource( 20 )
 
-[node name="bg_galaxy5" type="Sprite" parent="."]
+[node name="bg_galaxy5" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 modulate = Color( 0.294118, 0, 0.764706, 0.717647 )
-position = Vector2( 2469.92, 4181.72 )
-rotation = -1.69995
+position = Vector2( 6117.75, -4972.17 )
+rotation = 0.01745
 texture = ExtResource( 20 )
 
-[node name="bg_galaxy6" type="Sprite" parent="."]
+[node name="bg_galaxy6" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 modulate = Color( 0.384314, 0.0901961, 0.733333, 1 )
-position = Vector2( -4243.68, 514.516 )
+position = Vector2( 10726.3, -11078.1 )
+rotation = 1.7174
 texture = ExtResource( 20 )
 
-[node name="bg_galaxy7" type="Sprite" parent="."]
+[node name="bg_galaxy7" type="Sprite" parent="BackgroundElements/planet_pentagon"]
 modulate = Color( 0.054902, 0.282353, 0.968627, 1 )
-position = Vector2( 7896.1, 6587.49 )
+position = Vector2( 2945.13, 44.3687 )
+rotation = 1.7174
 texture = ExtResource( 20 )
+
+[node name="bg_cube18" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 1, 1, 0.258824 )
+position = Vector2( 15867.1, -3775.03 )
+rotation = -2.02634
+texture = ExtResource( 22 )
+
+[node name="bg_cube5" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 2445.84, 2644.12 )
+rotation = -0.884885
+texture = ExtResource( 15 )
+
+[node name="bg_cube6" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 633.494, -3638.23 )
+rotation = 1.7174
+texture = ExtResource( 14 )
+
+[node name="bg_cube7" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 0.423529, 0, 0.776471, 0.756863 )
+position = Vector2( 6630.43, 4564.2 )
+rotation = 1.7174
+texture = ExtResource( 22 )
+
+[node name="bg_galaxy8" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 9153.81, 3685.59 )
+rotation = 1.7174
+texture = ExtResource( 11 )
+
+[node name="bg_galaxy9" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+position = Vector2( 11130.1, -13566.9 )
+rotation = -1.42419
+scale = Vector2( 1, -1 )
+texture = ExtResource( 10 )
+
+[node name="bg_cube8" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 0.396078, 0.14902, 0.694118, 1 )
+position = Vector2( 5172.24, -12270.6 )
+rotation = 2.39284
+texture = ExtResource( 22 )
+
+[node name="bg_cube9" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 0.215686, 0.0823529, 0.980392, 1 )
+position = Vector2( 12593.4, -2661 )
+rotation = 1.7174
+texture = ExtResource( 21 )
+
+[node name="bg_cube10" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 0.305882, 0.0588235, 0.992157, 0.682353 )
+position = Vector2( 5284.3, -503.435 )
+rotation = 1.7174
+texture = ExtResource( 21 )
+
+[node name="planet_cube_aura2" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+visible = false
+modulate = Color( 0.780392, 0, 1, 1 )
+position = Vector2( 10565.5, -2190.74 )
+rotation = -2.40333
+texture = ExtResource( 25 )
+
+[node name="planet_pentagon_aura2" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 0.313726, 0, 1, 1 )
+position = Vector2( -42.0527, 15.6855 )
+rotation = -2.09091
+texture = ExtResource( 23 )
+
+[node name="planet_round_aura2" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 0, 0.298039, 1, 1 )
+position = Vector2( 4591.4, -8177.05 )
+rotation = 1.7174
+texture = ExtResource( 26 )
+
+[node name="planet_split_aura2" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 0, 0.109804, 1, 1 )
+position = Vector2( 6436.39, 2585.28 )
+rotation = 1.7174
+texture = ExtResource( 24 )
+
+[node name="bg_galaxy10" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 0.290196, 0, 1, 1 )
+position = Vector2( 11380.8, -5965.87 )
+rotation = 2.92343
+texture = ExtResource( 20 )
+
+[node name="bg_galaxy13" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.647059 )
+position = Vector2( 11868.7, -19508.5 )
+rotation = 0.07505
+texture = ExtResource( 20 )
+
+[node name="bg_cube13" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.443137 )
+position = Vector2( 6983.46, -19613 )
+rotation = 1.7174
+texture = ExtResource( 21 )
+
+[node name="bg_galaxy14" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.490196 )
+position = Vector2( 3189.16, -17725.1 )
+rotation = 3.06828
+texture = ExtResource( 20 )
+
+[node name="bg_cube14" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.360784 )
+position = Vector2( -996.479, -13149 )
+rotation = 1.7174
+texture = ExtResource( 22 )
+
+[node name="bg_cube15" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.396078 )
+position = Vector2( 18542.2, -12251.6 )
+rotation = 1.7174
+texture = ExtResource( 22 )
+
+[node name="bg_galaxy15" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.454902 )
+position = Vector2( 16082.9, -16677.9 )
+rotation = 1.7174
+texture = ExtResource( 20 )
+
+[node name="bg_cube16" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.290196 )
+position = Vector2( -5255.87, -2675.94 )
+rotation = 2.93389
+texture = ExtResource( 22 )
+
+[node name="bg_galaxy16" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.447059 )
+position = Vector2( -4069.93, 3328.24 )
+rotation = 1.7174
+texture = ExtResource( 20 )
+
+[node name="bg_galaxy17" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.352941 )
+position = Vector2( 15648.6, 6930.75 )
+rotation = -0.17454
+texture = ExtResource( 20 )
+
+[node name="bg_cube2" type="Sprite" parent="BackgroundElements/planet_pentagon/bg_galaxy17"]
+position = Vector2( -16882.8, -19346.1 )
+texture = ExtResource( 21 )
+
+[node name="bg_galaxy18" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.427451 )
+position = Vector2( 384.571, 7958.32 )
+rotation = 1.40324
+texture = ExtResource( 28 )
+
+[node name="bg_cube17" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.380392 )
+position = Vector2( 5190.45, 11086 )
+rotation = 0.933747
+texture = ExtResource( 22 )
+
+[node name="bg_galaxy19" type="Sprite" parent="BackgroundElements/planet_pentagon"]
+modulate = Color( 1, 0, 0, 0.415686 )
+position = Vector2( 19382.1, -7241.65 )
+rotation = 2.86059
+texture = ExtResource( 20 )
+
+[node name="bg_cube1" type="Sprite" parent="BackgroundElements/planet_pentagon/bg_galaxy19"]
+position = Vector2( 590.093, -6299.99 )
+texture = ExtResource( 22 )
+
+[node name="bg_cube2" type="Sprite" parent="BackgroundElements/planet_pentagon/bg_galaxy19"]
+position = Vector2( 13479.2, -14229.8 )
+texture = ExtResource( 22 )
+
+[node name="bg_cube3" type="Sprite" parent="BackgroundElements/planet_pentagon/bg_galaxy19"]
+position = Vector2( 3198.36, -9902.25 )
+texture = ExtResource( 21 )
 
 [node name="Planets" type="Node2D" parent="."]
 
@@ -193,61 +372,7 @@ position = Vector2( 9664.62, 2658.4 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="FuelMeter" parent="CanvasLayer/Control" instance=ExtResource( 12 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -320.0
-margin_top = -180.0
-margin_right = 320.0
-margin_bottom = 180.0
-playerPath = NodePath("../../../Ship")
-
-[node name="ui_slots" type="TextureRect" parent="CanvasLayer/Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -121.0
-margin_right = 515.0
-margin_bottom = -294.0
-rect_scale = Vector2( 0.5, 0.5 )
-rect_pivot_offset = Vector2( 246.942, -1.12242 )
-texture = ExtResource( 6 )
-stretch_mode = 4
-script = ExtResource( 17 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-shipPath = NodePath("../../../Ship")
-
-[node name="CurveTween" parent="CanvasLayer/Control/ui_slots" instance=ExtResource( 18 )]
-curve = SubResource( 1 )
-
-[node name="invImg" type="Sprite" parent="CanvasLayer/Control/ui_slots"]
-position = Vector2( 588.479, 33.6528 )
-scale = Vector2( 1e-05, 1e-05 )
-texture = ExtResource( 16 )
-
-[node name="invImg2" type="Sprite" parent="CanvasLayer/Control/ui_slots"]
-position = Vector2( 638.69, 33.2376 )
-scale = Vector2( 1e-05, 1e-05 )
-
-[node name="invImg3" type="Sprite" parent="CanvasLayer/Control/ui_slots"]
-position = Vector2( 688.214, 33.2171 )
-scale = Vector2( 1e-05, 1e-05 )
-
-[node name="Ship" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3739.95, -370.918 )
-collision_mask = 0
+[node name="Ui" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [node name="LostObjects" type="Node2D" parent="."]
 
@@ -326,166 +451,13 @@ id = 8
 position = Vector2( 7172.44, 379.82 )
 id = 9
 
+[node name="Ship" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3740.48, -370.918 )
+collision_mask = 0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
 autoplay = true
 bus = "Music"
-
-[node name="bg_cube18" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.258824 )
-position = Vector2( 2230.04, -5637.95 )
-rotation = 2.53945
-texture = ExtResource( 22 )
-
-[node name="bg_cube5" type="Sprite" parent="."]
-position = Vector2( 10540.9, 6701.66 )
-rotation = 3.6809
-texture = ExtResource( 15 )
-
-[node name="bg_cube6" type="Sprite" parent="."]
-position = Vector2( 4590.69, 9412.28 )
-texture = ExtResource( 14 )
-
-[node name="bg_cube7" type="Sprite" parent="."]
-modulate = Color( 0.423529, 0, 0.776471, 0.756863 )
-position = Vector2( 11829.1, 2281.47 )
-texture = ExtResource( 22 )
-
-[node name="bg_galaxy8" type="Sprite" parent="."]
-position = Vector2( 10591.3, -86.4902 )
-texture = ExtResource( 11 )
-
-[node name="bg_galaxy9" type="Sprite" parent="."]
-position = Vector2( -6764.77, 478.592 )
-scale = Vector2( -1, 1 )
-texture = ExtResource( 10 )
-
-[node name="bg_cube8" type="Sprite" parent="."]
-modulate = Color( 0.396078, 0.14902, 0.694118, 1 )
-position = Vector2( -4612.08, 6183.23 )
-rotation = 0.675442
-texture = ExtResource( 22 )
-
-[node name="bg_cube9" type="Sprite" parent="."]
-modulate = Color( 0.215686, 0.0823529, 0.980392, 1 )
-position = Vector2( 3810.34, -2562.09 )
-texture = ExtResource( 21 )
-
-[node name="bg_cube10" type="Sprite" parent="."]
-modulate = Color( 0.305882, 0.0588235, 0.992157, 0.682353 )
-position = Vector2( 7012.47, 4353.44 )
-texture = ExtResource( 21 )
-
-[node name="planet_cube_aura2" type="Sprite" parent="."]
-visible = false
-modulate = Color( 0.780392, 0, 1, 1 )
-position = Vector2( 4571.79, -624.664 )
-rotation = 2.16246
-texture = ExtResource( 25 )
-
-[node name="planet_pentagon_aura2" type="Sprite" parent="."]
-modulate = Color( 0.313726, 0, 1, 1 )
-position = Vector2( 8304.09, 9546.82 )
-rotation = -3.80831
-texture = ExtResource( 23 )
-
-[node name="planet_round_aura2" type="Sprite" parent="."]
-modulate = Color( 0, 0.298039, 1, 1 )
-position = Vector2( -477.614, 6159.86 )
-texture = ExtResource( 26 )
-
-[node name="planet_split_aura2" type="Sprite" parent="."]
-modulate = Color( 0, 0.109804, 1, 1 )
-position = Vector2( 9899.76, 2762.51 )
-texture = ExtResource( 24 )
-
-[node name="bg_galaxy10" type="Sprite" parent="."]
-modulate = Color( 0.290196, 0, 1, 1 )
-position = Vector2( 718.061, -879.697 )
-rotation = -5.07716
-texture = ExtResource( 20 )
-
-[node name="bg_galaxy13" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.647059 )
-position = Vector2( -12750.6, 615.904 )
-rotation = -1.64235
-texture = ExtResource( 20 )
-
-[node name="bg_cube13" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.443137 )
-position = Vector2( -12140.3, 5464.01 )
-texture = ExtResource( 21 )
-
-[node name="bg_galaxy14" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.490196 )
-position = Vector2( -9718.42, 8941.83 )
-rotation = 1.35088
-texture = ExtResource( 20 )
-
-[node name="bg_cube14" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.360784 )
-position = Vector2( -4580, 12414.1 )
-texture = ExtResource( 22 )
-
-[node name="bg_cube15" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.396078 )
-position = Vector2( -6546.36, -7046.13 )
-texture = ExtResource( 22 )
-
-[node name="bg_galaxy15" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.454902 )
-position = Vector2( -10565.9, -3966.54 )
-texture = ExtResource( 20 )
-
-[node name="bg_cube16" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.290196 )
-position = Vector2( 6402.97, 15097.9 )
-rotation = 1.21649
-texture = ExtResource( 22 )
-
-[node name="bg_galaxy16" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.447059 )
-position = Vector2( 12169.5, 13047.6 )
-texture = ExtResource( 20 )
-
-[node name="bg_galaxy17" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.352941 )
-position = Vector2( 12852.9, -6985.69 )
-rotation = -1.89194
-texture = ExtResource( 20 )
-
-[node name="bg_cube2" type="Sprite" parent="bg_galaxy17"]
-position = Vector2( -16882.8, -19346.1 )
-texture = ExtResource( 21 )
-
-[node name="bg_galaxy18" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.427451 )
-position = Vector2( 16099.2, 7964.52 )
-rotation = -0.314159
-texture = ExtResource( 28 )
-
-[node name="bg_cube17" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.380392 )
-position = Vector2( 18491.3, 2753.3 )
-rotation = -0.783653
-texture = ExtResource( 22 )
-
-[node name="bg_galaxy19" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.415686 )
-position = Vector2( -1712.86, -8608.86 )
-rotation = 1.14319
-texture = ExtResource( 20 )
-
-[node name="bg_cube1" type="Sprite" parent="bg_galaxy19"]
-position = Vector2( 590.093, -6299.99 )
-texture = ExtResource( 22 )
-
-[node name="bg_cube2" type="Sprite" parent="bg_galaxy19"]
-position = Vector2( 13479.2, -14229.8 )
-texture = ExtResource( 22 )
-
-[node name="bg_cube3" type="Sprite" parent="bg_galaxy19"]
-position = Vector2( 3198.36, -9902.25 )
-texture = ExtResource( 21 )
-[connection signal="curve_tween" from="CanvasLayer/Control/ui_slots/CurveTween" to="CanvasLayer/Control/ui_slots" method="_on_CurveTween_curve_tween"]
+[connection signal="itemPicked" from="Ship" to="CanvasLayer/Ui" method="_on_Ship_itemPicked"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

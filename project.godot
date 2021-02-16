@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/CurveTween/CurveTween.gd"
 }, {
+"base": "Node",
+"class": "Dialogic",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/dialogic_class.gd"
+}, {
+"base": "Reference",
+"class": "DialogicUtil",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/DialogicUtil.gd"
+}, {
 "base": "Resource",
 "class": "Item",
 "language": "GDScript",
@@ -23,17 +33,25 @@ _global_script_classes=[ {
 "class": "PlanetFeature",
 "language": "GDScript",
 "path": "res://PlanetFeature.gd"
+}, {
+"base": "Resource",
+"class": "shipStats",
+"language": "GDScript",
+"path": "res://ShipStats.gd"
 } ]
 _global_script_class_icons={
 "CurveTween": "",
+"Dialogic": "",
+"DialogicUtil": "",
 "Item": "",
-"PlanetFeature": ""
+"PlanetFeature": "",
+"shipStats": ""
 }
 
 [application]
 
 config/name="Whereabouts"
-run/main_scene="res://items/Main.tscn"
+run/main_scene="res://Space.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -50,6 +68,10 @@ window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "dialogic" )
 
 [importer_defaults]
 

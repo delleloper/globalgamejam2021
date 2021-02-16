@@ -7,5 +7,5 @@
 script = ExtResource( 1 )
 id = 4
 name = "Lucas Ligthsaber"
-description = ""
+description = "A jedi weapon"
 image = ExtResource( 2 )

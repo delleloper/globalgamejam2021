@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource( 1 )
 id = 1
-name = "cardb"
-description = ""
+name = "An ace"
+description = "An ace on the sleeve"
 image = ExtResource( 2 )

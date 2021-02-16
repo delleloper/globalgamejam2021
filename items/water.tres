@@ -7,5 +7,5 @@
 script = ExtResource( 1 )
 id = 9
 name = "Water"
-description = ""
+description = "You, drink water now!"
 image = ExtResource( 2 )
